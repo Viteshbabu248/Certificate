@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificate of Completion - Katla Vitesh Babu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9fb;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #0b3d91;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .certificate-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .certificate-container img {
+      width: 100%;
+      border-radius: 10px;
+      border: 4px solid #0b3d91;
+    }
+
+    .info-section {
+      background-color: #f1f3f5;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .info-section h2 {
+      font-size: 1.6em;
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 30px;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      font-size: 1em;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #ffe0e6;
+      color: #b20038;
+      padding: 6px 12px;
+      margin: 5px 5px 0 0;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+
+    .course-description {
+      margin-top: 20px;
+    }
+
+    .course-description p {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #666;
+    }
+    .btn {
+    background-color: #0b3d91;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #062c6a;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Course Certificate</h1>
+    <p>Issued by Udemy | Completed by Katla Vitesh Babu</p>
+  </header>
+
+  <div class="certificate-container">
+    <img src="cert.png" alt="Certificate" />
+
+    <div class="info-section">
+      <h2>Modern Web Applications</h2>
+      <div class="info-grid">
+        <div style="display:inline">
+        <div class="info-item"><strong>Issued to:</strong> Katla Vitesh Babu</div>
+        <div class="info-item"><strong>Issued by:</strong> Udemy</div>
+        </div>
+        <div style="display:inline">
+        <div class="info-item"><strong>Event Dates:</strong> 15-May-2025 to 17-May-2025</div>
+        <div class="info-item"><strong>Issued on:</strong> 18-May-2025</div>
+        <div class="info-item"><strong>Expires on:</strong> 18-May-2027</div>
+        </div>
+      </div>
+
+      <h3>Skills Acquired</h3>
+      <span class="badge">HTML</span>
+      <span class="badge">CSS</span>
+      <span class="badge">Java Script</span>
+
+      <div class="course-description">
+        <h3>About the Course</h3>
+        <p>This course covers the fundamentals and advanced techniques of modern web development.
+        Learners build interactive, responsive, and secure applications using the latest frontend and backend technologies.
+        It emphasizes real-world project implementation, API integration, and performance optimization.</p>
+      </div>
+      <div style="text-align: center; margin: 30px 0;">
+        <button class="btn" onclick="downloadCert()">Download</button>
+        <button class="btn" onclick="shareCert()">Share</button>
+        <button class="btn" onclick="postToLinkedIn()">Add to LinkedIn</button>
+        </div>
+      <div class="course-description">
+        <h3>Verified by</h3>
+        <p><strong>Udemy Education</strong><br />Online Global Learning Platform</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Katla Vitesh Babu. All rights reserved.
+  </footer>
+
+  <script>
+    function downloadCert() {
+    const link = document.createElement('a');
+    link.href = 'cert.png'; // Certificate image path
+    link.download = 'cert.png';
+    link.click();
+  }
+
+  function shareCert() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'My Certificate',
+        text: 'Check out my Modern Web Applications certificate!',
+        url: window.location.href,
+      }).catch((err) => console.error('Sharing failed:', err));
+    } else {
+      alert('Web Share API not supported on this browser.');
+    }
+  }
+
+  function postToLinkedIn() {
+    const linkedInURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`;
+    window.open(linkedInURL, '_blank');
+  }
+  </script>
+</body>
+</html>
